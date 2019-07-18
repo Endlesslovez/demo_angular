@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductType } from '../Products';
 import { DataProduct } from '../data';
 @Component({
   selector: 'app-products',
@@ -6,17 +7,17 @@ import { DataProduct } from '../data';
   styleUrls: ['./products.component.sass']
 })
 export class ProductsComponent implements OnInit {
-  product = DataProduct;
+  products = DataProduct;
+  selectedProduct: ProductType;
   constructor() { }
 
   ngOnInit() {
   }
-
-  onClickMe = () => {
-    this.product.name = 'Hey';
+  detailProduct = product => {
+    console.log(product);
+      this.selectedProduct = product;
   }
-  onKeyUp = event => {
-    this.product.name = event.target.value;
+  deleteProduct = product => {
+    this.products = this.products.filter(item => item.id !== product.id );
   }
-  
 }
