@@ -5,20 +5,14 @@
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
-          {{product.status == 1 ? 'Còn hàng' : 'Hết hàng'}}
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-          <form action="">
-            <input type="text" class="form-control"/>
-            <input type="text" name="product-name" [(ngModel)]="product.name">
-            <select name="product-status" id="" [(ngModel)]="product.status">
-              <option value="0">Hết hàng</option>
-              <option value="1">Còn hàng</option>
-            </select>
-          </form>
-          
+          <a href="#" class="btn btn-primary" (click)="detailProduct(product)">View</a>
+          <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="selectedProduct">
+    {{selectedProduct.name}}
 </div>

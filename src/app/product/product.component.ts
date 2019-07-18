@@ -8,8 +8,15 @@ import { Data } from '../data';
 })
 export class ProductComponent implements OnInit {
   products = Data;
+  selectedProduct: Product;
   constructor() { }
 
   ngOnInit() {
+  }
+  detailProduct(product){
+    this.selectedProduct = product;
+  }
+  removeProduct(product){
+    this.products = this.products.filter(item => item.id != product.id)
   }
 }
