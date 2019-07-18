@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let product of products">
+      <div class="card" 
+      [class.border]="product.status"
+      [style.color]="product.status ? 'green' : 'blue'"
+      >
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.status}}</p>
+          <a href="#" class="btn btn-primary" (click)="productDetail(product)">Detail</a>
+          <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="selectedProduct">
+  {{selectedProduct.name}}
+</div>
