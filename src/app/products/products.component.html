@@ -7,8 +7,10 @@
     <div class="row">
       <div class="col-md-4" *ngFor="let product of products">
         <div class="card mb-4 shadow-sm">
-          <img [src]="product.img" [alt]="product.name" class="img-fluid">
-          <div class="card-body" [class.border]="product.status" [style.color]="product.status ? 'green' : 'blue'">
+          <img src="{{product.img}}" alt="{{product.name}}" class="img-fluid">
+
+          <div class="card-body"
+            [ngClass]="setClass()">
             <h2>{{product.name}}</h2>
             <p class="card-text">{{product.desc}}</p>
             <p class="card-text">Tình trạng: {{ product.status == 1 ? 'Còn hàng' : 'Hết hàng'}}</p>
@@ -16,6 +18,7 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary" (click)="detailProduct(product)">View</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteProduct(product)">Delete</button>
+                <button (click)="clickMe()"class="btn btn-default">Click me</button>
               </div>
             </div>
           </div>
@@ -25,4 +28,8 @@
       
     </div>
   </div>
+</div>
+<div *ngIf="selectedProduct">
+  <app-product-detail [product]="selectedProduct"></app-product-detail>
+
 </div>
