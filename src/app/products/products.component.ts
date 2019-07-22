@@ -9,6 +9,7 @@ import { ProductType } from './Product';
 export class ProductsComponent implements OnInit {
   products = Data;
   selectedProduct: ProductType;
+  isShow: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -22,5 +23,8 @@ export class ProductsComponent implements OnInit {
   }
   removeProduct(product){
     this.products = this.products.filter(item => item.id != product.id);
+  }
+  changeClass(){
+    this.isShow = !this.isShow;
   }
 }

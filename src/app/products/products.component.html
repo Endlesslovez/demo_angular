@@ -2,9 +2,14 @@
   <div class="row">
     <div class="col-4" *ngFor="let product of products">
       <div class="card" 
-      [class.border]="product.status"
+      [ngClass]="
+        {
+          'active menu-hover': isShow
+        }
+      "
       [style.color]="product.status ? 'green' : 'blue'"
       >
+      <button (click)="changeClass()">Change Class</button>
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
@@ -16,6 +21,5 @@
     </div>
   </div>
 </div>
-<div *ngIf="selectedProduct">
-  {{selectedProduct.name}}
-</div>
+
+<app-product-detail [data]="selectedProduct"></app-product-detail>
