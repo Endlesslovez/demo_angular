@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PT14101-UD';
+  address: string;
+  getAddress(value){
+    console.log(value);
+    this.address = value;
+  }
 }

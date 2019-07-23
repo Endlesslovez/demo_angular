@@ -7,7 +7,7 @@ import { Product } from '../Product';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input product : Product;
+  @Input('data') product : Product;
   constructor() { }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../Product';
 import { Data } from '../data';
+import { HelloService } from '../hello.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -9,9 +10,13 @@ import { Data } from '../data';
 export class ProductComponent implements OnInit {
   products = Data;
   selectedProduct: Product;
-  constructor() { }
+  @Input('data') dataProduct: string;
+  constructor(
+    private helloService: HelloService
+  ) { }
 
   ngOnInit() {
+    this.helloService.showHello();
   }
   detailProduct(product){
     this.selectedProduct = product;
