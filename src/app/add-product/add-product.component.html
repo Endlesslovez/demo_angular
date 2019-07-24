@@ -1,0 +1,8 @@
+<form class="w-50 mx-auto mt-3">
+
+  <div class="form-group">
+    <label for="">  {{address}}</label>
+    <input type="text" name="address" class="form-control"placeholder="Enter email" [(ngModel)]="address">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="getAddress()">Submit</button>
+</form>

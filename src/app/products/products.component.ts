@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Data } from './Data';
 import { ProductType } from './Product';
 @Component({
@@ -10,6 +10,7 @@ export class ProductsComponent implements OnInit {
   products = Data;
   selectedProduct: ProductType;
   isShow: boolean = false;
+  @Input('dataAddress') address: string;
   constructor() { }
 
   ngOnInit() {

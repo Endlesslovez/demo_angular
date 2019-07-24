@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'PT13313-WEB';
+  title :string;
+  getAddress(value){
+    this.title = value;
+  }
 }

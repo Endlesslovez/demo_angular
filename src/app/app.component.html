@@ -1,3 +1,4 @@
-<app-products></app-products>
-
+<app-products [dataAddress]="title"></app-products>
+{{title}}
+<app-add-product (keyAddress)="getAddress($event)"></app-add-product>
 <router-outlet></router-outlet>
