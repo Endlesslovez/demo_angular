@@ -12,7 +12,9 @@ export class ProductDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    this.showMessage();
   }
-
+  showMessage(){
+    console.log('Hello');
+  }
 }
