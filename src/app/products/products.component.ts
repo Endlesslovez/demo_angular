@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductType } from '../Products';
-import { ProductService} from '../services/product.service';
+import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -12,15 +12,13 @@ export class ProductsComponent implements OnInit {
   isShowClass: boolean = false;
   constructor(
     private productService: ProductService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.getProducts();
   }
-  showMessage(){
-    console.log('Hello');
-  }
-  getProducts(){
+  getProducts() {
     this.products = this.productService.getProducts();
     console.log(this.products);
   }
@@ -28,18 +26,18 @@ export class ProductsComponent implements OnInit {
 
 
   detailProduct = product => {
-      this.selectedProduct = product;
+    this.selectedProduct = product;
   }
   deleteProduct = product => {
-    this.products = this.products.filter(item => item.id !== product.id );
+    this.products = this.products.filter(item => item.id !== product.id);
   }
-  setClass(){
-    return{
-        'border': this.isShowClass,
-        'shadow': this.isShowClass
+  setClass() {
+    return {
+      'border': this.isShowClass,
+      'shadow': this.isShowClass
     }
   }
-  clickMe(){
+  clickMe() {
     this.isShowClass = !this.isShowClass;
   }
 }
