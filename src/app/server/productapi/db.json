@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "LONG RED SHIRT",
+      "price": 79.9
+    },
+    {
+      "name": "Le Trong Dat",
+      "price": "500",
+      "id": 2
+    }
+  ]
+}

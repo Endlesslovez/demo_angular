@@ -1250,22 +1250,16 @@ section
 
 .products
 {
-    width: 100%;
     background: #FFFFFF;
     margin-top: 95px;
     padding-bottom: 99px;
+    padding: 0 15px;
 }
 .products_container
 {
-    width: calc(100% + 27px);
-    left: -14px;
-}
-.product
-{
-    width: calc(100% / 4);
-    padding-left: 14px;
-    padding-right: 13px;
-    margin-bottom: 45px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 30px;
 }
 .product_image
 {
