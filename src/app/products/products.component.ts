@@ -19,8 +19,10 @@ export class ProductsComponent implements OnInit {
     this.getProducts();
   }
   getProducts() {
-    this.products = this.productService.getProducts();
-    console.log(this.products);
+    this.productService.getProducts().subscribe( data => {
+      console.log(data);
+      this.products = data;
+    })
   }
 
 
@@ -28,7 +30,7 @@ export class ProductsComponent implements OnInit {
   detailProduct = product => {
     this.selectedProduct = product;
   }
-  deleteProduct = product => {
+  deleteProduct(product) {
     this.products = this.products.filter(item => item.id !== product.id);
   }
   setClass() {
