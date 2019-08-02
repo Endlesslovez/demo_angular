@@ -10,6 +10,9 @@ import { ProductsComponent } from './products/component/products.component';
 import { NewsletterComponent } from './newsletter/component/newsletter.component';
 import { FooterComponent } from './footer/component/footer.component';
 import { CategoryFeatureComponent } from './category-feature/component/category-feature.component';
+import { ProductEditComponent } from './product-edit/component/product-edit.component';
+import { ProductAddComponent } from './products/product-add/product-add.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { CategoryFeatureComponent } from './category-feature/component/category-
     ProductsComponent,
     NewsletterComponent,
     FooterComponent,
-    CategoryFeatureComponent
+    CategoryFeatureComponent,
+    ProductEditComponent,
+    ProductAddComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
