@@ -1,4 +1,15 @@
-<app-products [dataAddress]="title"></app-products>
+<header>
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link " routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+      </ul>
+</header>
+
+<!-- <app-products [dataAddress]="title"></app-products>
 {{title}}
-<app-add-product (keyAddress)="getAddress($event)"></app-add-product>
+<app-add-product (keyAddress)="getAddress($event)"></app-add-product> -->
 <router-outlet></router-outlet>
